@@ -6,6 +6,7 @@ var UserSchema = new Schema({
     SS: String,
     firstPet: String,
     momMaiden: String,
-    hashed_password: String
+    hashed_password: String,
+    comment: String
 });
 mongoose.model('User', UserSchema);
