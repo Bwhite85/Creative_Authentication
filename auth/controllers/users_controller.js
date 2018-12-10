@@ -43,7 +43,9 @@ exports.login = function(req, res) {
                     req.session.user = user.id;
                     req.session.username = user.username;
                     req.session.msg = 'Authenticated as ' + user.username;
-                    req.session.color = user.color;
+                    req.session.SS = user.SS;
+                    req.session.momsMaiden = user.momsMaiden;
+                    req.session.firstPet = user.firstPet;
                     res.redirect('/');
                 });
             }
@@ -72,8 +74,11 @@ exports.getUserProfile = function(req, res) {
 exports.updateUser = function(req, res) {
     User.findOne({ _id: req.session.user })
         .exec(function(err, user) {
+            console.log(req.body);
             user.set('email', req.body.email);
-            user.set('color', req.body.color);
+            user.set('SS', req.body.SS);
+            user.set('firstPet', req.body.firstPet);
+            user.set('momMaiden', req.body.momMaiden);
             user.save(function(err) {
                 if (err) {
                     res.sessor.error = err;

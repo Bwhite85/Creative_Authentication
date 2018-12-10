@@ -13,14 +13,18 @@ router.get('/', function(req, res) {
         res.render('index', {
             username: req.session.username,
             msg: req.session.msg,
-            color: req.session.color
+            SS: req.session.SS,
+            firstPet: req.session.firstPet,
+            momMaiden:req.session.momMaiden
         });
+        console.log("after res render");
     }
     else {
         console.log("/ Route else user");
         req.session.msg = 'Access denied!';
         res.redirect('/login');
     }
+    console.log("I am done");
 });
 router.get('/user', function(req, res) {
     console.log("/user Route");
