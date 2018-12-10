@@ -1,0 +1,24 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("http://getwallpapers.com/wallpaper/full/9/7/6/879841-winter-scene-desktop-background-1920x1200-for-tablet.jpg");
+}
+
+a {
+  color: #FCE2BE;
+  text-align: center;
+}
+
+h1, h2, p {
+  text-align: center;
+}
+
+.infoBackground{
+  background-color: #A3B4D2;
+}
+
+.centerEverything {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
