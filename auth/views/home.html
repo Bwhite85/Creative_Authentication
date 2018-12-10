@@ -2,7 +2,7 @@
 <html ng-app="myApp">
 
 <head>
-    <title>User Login and Sessions</title>
+    <title>Home</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
 </head>
 
@@ -13,26 +13,17 @@
                 <h2 id="welcomeText">Welcome. You are Logged In as
                     <%= username %>
                 </h2>
-                <a id="homeLink" href="/home">Comments</a>
                 <a id="logoutLink" href="/logout">logout</a>
                 <a id="editLink" href="/user">Edit User</a>
-                <p>new message</p>
+                <p>See what people thought of CS 260 during the Fall 2018 semester!</p>
             </div>
             <hr>
-<<<<<<< HEAD
-            <span id="indexMsg">
-                <%= msg %>
-    </span>
-=======
-            <span id="indexMsg"><%= msg %></span>
->>>>>>> 552116d82c8ce006ef9944e8e91fadb45aac5235
-            <hr>
-            <span id="momMaidenText">Your moms Maiden name: 
-            <%= momMaiden %></span><br>
-             <span id="firstPetText">Your first pet: <%= firstPet %></span><br>
-             <span id="SSText">Your Social security number: <%= SS %></span><br>
+            <div id="posts" ng-repeat="review in reviews"></div> {{User.username}}: {{User.comment}}
+            
             <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
             <script src="/javascripts/my_app.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
         </div>
     </div>
 </body>
