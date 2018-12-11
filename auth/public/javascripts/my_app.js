@@ -3,19 +3,19 @@ controller('myController', ['$scope', '$http',
     function($scope, $http) {
         $scope.comments = [];
         $scope.getAll = function() {
-            $http.get('/comment') {
-                .success(function(data, status, headers, config) {
-                    console.log("success in my_app");
-                    console.log(data);
-                    $scope.user = data;
-                    $scope.error = "";
-                }),
-                error(function(data, status, headers, config) {
-                    console.log("error in my_app");
-                    $scope.user = {};
-                    $scope.error = data;
-                });
-            }
+            // $http.get('/comment') {
+            //     .success(function(data, status, headers, config) {
+            //         console.log("success in my_app");
+            //         console.log(data);
+            //         $scope.user = data;
+            //         $scope.error = "";
+            //     }),
+            //     error(function(data, status, headers, config) {
+            //         console.log("error in my_app");
+            //         $scope.user = {};
+            //         $scope.error = data;
+            //     });
+            // }
             console.log("ran getAll function");
             return $http.get('/comment').success(function(data) {
                 angular.copy(data, $scope.comments);

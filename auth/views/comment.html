@@ -19,7 +19,7 @@
                 <h4>See what people thought of CS 260 during the Fall 2018 semester!</h4><br/>
                 <a href="#newComment">Add your own review at the bottorm</a>
                 <hr>
-                <div id="posts" ng-repeat="review in reviews"></div> {{User.username}}: {{User.comment}}
+                <div id="posts" ng-repeat="review in reviews"></div> {{user.username}}: {{user.comment}}
                 <form>
                     <input type="text" ng-model="formContentComment" id="newComment" placeholder="Add a new comment here" />
                     <button type="submit" ng-click="addComment()">Add Review</button>

@@ -10,25 +10,22 @@
     <div class="infoBackground">
         <div class="centerEverything">
             <div ng-controller="myController">
-                <h2 id="welcomeText">Welcome. You are Logged In as
-                    <%= username %>
+                <h2 id="welcomeText">Welcome to Experion.<br/> You are Logged In as
+                    <%= username %> <br/>Don't worry, your info is safe with us! :)
                 </h2>
                 <a id="homeLink" href="/comment">CS260 Reviews</a>
                 <a id="logoutLink" href="/logout">logout</a>
                 <a id="editLink" href="/user">Edit User</a>
-                <p>new message</p>
             </div>
             <hr>
 
-            <span id="indexMsg"><%= msg %></span>
-
-            <hr>
+            <span><b>Your info: </b></span><br/>
             <span id="momMaidenText">Your moms Maiden name: 
             <%= momMaiden %>
             </span><br>
-             <span id="firstPetText">Your first pet: <%= firstPet %>
+            <span id="firstPetText">Your first pet: <%= firstPet %>
              </span><br>
-             <span id="SSText">Your Social security number: <%= SS %>
+            <span id="SSText">Your Social security number: <%= SS %>
              </span><br>
             <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
             <script src="/javascripts/my_app.js"></script>
