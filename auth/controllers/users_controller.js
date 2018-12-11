@@ -109,14 +109,17 @@ exports.pushComment = function(req, res){
     User.findOne({ _id: req.session.user })
         .exec(function(err, user){
             user.set('comment', req.body.comment);
+            console.log(req.body.comment);
             user.save(function(err) {
                 if (err) {
                     res.session.error = err;
                 }
                 else {
+                    //does this make it only visible to the person logged in?
                     req.session.comment = req.body.comment;
                 }
-                res.redirect('/comment');
+                //res.redirect('/comment');
+                console.log("inside save of exec of comment post route");
         })
         })
 };

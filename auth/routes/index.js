@@ -43,7 +43,7 @@ router.get('/comment', function(req, res) {
         req.session.msg = 'Access denied!';
         res.redirect('/login');
     }
-    console.log("I am done");
+    console.log("comment get is done.");
 });
 
 router.get('/user', function(req, res) {
@@ -83,5 +83,6 @@ router.post('/user/delete', users.deleteUser);
 router.post('/login', users.login);
 router.post('/pushComment', users.pushComment);
 router.get('/user/profile', users.getUserProfile);
+router.get('/comment', users.comment);
 
 module.exports = router;
