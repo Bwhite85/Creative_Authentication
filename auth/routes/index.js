@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
             msg: req.session.msg,
             SS: req.session.SS,
             firstPet: req.session.firstPet,
-            momMaiden:req.session.momMaiden
+            momMaiden: req.session.momMaiden
         });
         console.log("after res render");
     }
@@ -26,6 +26,26 @@ router.get('/', function(req, res) {
     }
     console.log("I am done");
 });
+router.get('/comment', function(req, res) {
+    console.log("/comment Route");
+    //    console.log(req);
+    console.log(req.session);
+    if (req.session.user) {
+        console.log("/comment Route if user");
+        res.render('comment', {
+            username: req.session.username,
+            comment: req.session.comment
+        });
+        console.log("after res render");
+    }
+    else {
+        console.log("/ Route else user");
+        req.session.msg = 'Access denied!';
+        res.redirect('/login');
+    }
+    console.log("I am done");
+});
+
 router.get('/user', function(req, res) {
     console.log("/user Route");
     if (req.session.user) {
@@ -61,6 +81,7 @@ router.post('/signup', users.signup);
 router.post('/user/update', users.updateUser);
 router.post('/user/delete', users.deleteUser);
 router.post('/login', users.login);
+router.post('/pushComment', users.pushComment);
 router.get('/user/profile', users.getUserProfile);
 
 module.exports = router;

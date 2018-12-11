@@ -93,6 +93,33 @@ exports.updateUser = function(req, res) {
             });
         });
 };
+exports.comment = function(req, res){
+    User.findOne({_id: req.session.user})
+        .exec(function(err, user) {
+            if(!user){
+                res.json(404, {err: "User comments not found"});
+            }
+            else{
+                res.json(user.comment);
+            }
+        });
+};
+exports.pushComment = function(req, res){
+    console.log("/comment post route");
+    User.findOne({ _id: req.session.user })
+        .exec(function(err, user){
+            user.set('comment', req.body.comment);
+            user.save(function(err) {
+                if (err) {
+                    res.session.error = err;
+                }
+                else {
+                    req.session.comment = req.body.comment;
+                }
+                res.redirect('/comment');
+        })
+        })
+};
 exports.deleteUser = function(req, res) {
     User.findOne({ _id: req.session.user })
         .exec(function(err, user) {

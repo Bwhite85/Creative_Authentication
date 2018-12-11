@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Reviews</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+</head>
+
+<body>
+    <div class="infoBackground">
+        <div class="centerEverything">
+            <div ng-controller="myController">
+                <h2 id="welcomeText">Welcome. You are Logged In as
+                    <%= username %>
+                </h2>
+                <a id="homeLink" href="/index">Home</a>
+                <a id="logoutLink" href="/logout">logout</a>
+                <a id="editLink" href="/user">Edit User</a>
+                <h4>See what people thought of CS 260 during the Fall 2018 semester!</h4><br/>
+                <a href="newComment">Add your own review at the bottorm</a>
+                <hr>
+                <div id="posts" ng-repeat="review in reviews"></div> {{User.username}}: {{User.comment}}
+                <form>
+                    <input type="text" id="newComment" placeholder="Add a new comment here" />
+                    <button type="submit" ng-click="addComment()">Add Review</button>
+                </form>
+            </div>
+
+            <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+            <script src="/javascripts/my_app.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        </div>
+    </div>
+</body>
+
+</html>
