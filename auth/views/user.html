@@ -4,6 +4,15 @@
 <head>
     <title>Update User</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="public/stylesheets/clean-blog.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -11,6 +20,7 @@
         <div class="centerEverything">
             <div class="form-container" ng-controller="myController">
                 <p id="sectionTitle" class="form-header">User Profile</p>
+                <a align="left" id="homeLink" href="/">Account</a><br/>
                 <form method="POST" action="/user/update">
                     <label>Username:</label>
                     <input type="text" id="username" name="username" ng-model="user.username" disabled><br>
@@ -32,7 +42,6 @@
             <span id="userMsg"><%= msg %></span>
             <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
             <script src="/javascripts/my_app.js"></script>
-            <a id="homeLink" href="/">Home</a>
         </div>
     </div>
 </body>
